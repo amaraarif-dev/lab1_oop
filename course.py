@@ -67,6 +67,7 @@ class Course:
             new_course.add_student(name, marks)
 
         return new_course
+    
 
 
 def load_course(name, filename):
@@ -104,3 +105,8 @@ if __name__ == "__main__":
     test = Course("Test")
     test.add_student("A", 50)
     print(test)
+def remove_student(self, name: str) -> None:
+    """Remove a student, or raise KeyError if missing."""
+    if name not in self.marks:
+        raise KeyError(f"No student named {name}")
+    del self.marks[name]
